@@ -1,25 +1,52 @@
   
+  
 <html>
   <head>
         <title>SIMPLE INTEREST CALCULATOR</title>
-        
+        <style>  
+          body{  
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Helvetica, sans-serif;    
+          }  
+          form {  
+              padding: 50px;  
+          }         
+          button {  
+            background-color: #e8f1e8;  
+            color: rgb(219, 107, 107);  
+            padding: 16px 20px;  
+            margin: 8px 0;  
+            border: none;  
+            cursor: pointer;  
+            width: 25%;  
+            opacity: 0.9;  
+          }  
+          button:hover {  
+            opacity: 1;  
+          }  
+          </style>  
+      
         <script>
             function Calculate()
             {
-                p = document.getElementById('p').value
-                r = document.getElementById('r').value
-                t = document.getElementById('t').value
+             var p = document.getElementById('p').value
+             var r = document.getElementById('r').value
+               var t = document.getElementById('t').value
+                document.getElementById('result').disabled = false;
               result= document.getElementById('result')
                   result.innerHTML = (p*t*r/100)
+                  
             }
 
         </script>
   </head>
+
   <body class= 'body'>
-      principle Amount: <input id= "p" type="text"></body></br>
-      rate of interest: <input id="r" type="text"></br>
-      total months: <input id= "t" type="text"></br>
+      <input id= "p" type="text" placeholder="Enter Loan Amount"></body></br>
+     <input id="r" type="text" placeholder="Enter Rate of Interest"></br>
+    <input id= "t" type="text" placeholder="years to repay"></br>
       <button onclick="Calculate()">Calculate</button>
-      <h1 id = "result"> SIMPLE INTEREST : </h1>
+      <div>
+      Total Interest:<label id = "result"></label><br>
+      </div>
   </body>
 </html>
